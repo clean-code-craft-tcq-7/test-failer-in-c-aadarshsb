@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-char size(int cms) {
+char SizeOfTShirt(int cms) {
     char sizeName = '\0';
     if(cms < 38) {
         sizeName = 'S';
@@ -14,9 +14,15 @@ char size(int cms) {
 }
 
 int main() {
-    assert(size(37) == 'S');
-    assert(size(40) == 'M');
-    assert(size(43) == 'L');
+    assert(SizeOfTShirt(-1) != 'S');
+    assert(SizeOfTShirt(0x8FFFFFFF) != 'L');
+    assert(SizeOfTShirt(0xFFFFFFFF) != 'S');
+    assert(SizeOfTShirt(1) !='S');
+    #if 0
+    assert(SizeOfTShirt(37) == 'S');
+    assert(SizeOfTShirt(40) == 'M');
+    assert(SizeOfTShirt(43) == 'L');
+    #endif
     printf("All is well (maybe!)\n");
     return 0;
 }
