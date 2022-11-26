@@ -14,7 +14,7 @@ char SizeOfTShirt(int cms) {
 }
 
 int main() {
-    assert(SizeOfTShirt(-1) != 'S');
+    assert(SizeOfTShirt(0x80000001) != 'S');
     assert(SizeOfTShirt(0x8FFFFFFF) != 'L');
     assert(SizeOfTShirt(0xFFFFFFFF) != 'S');
     assert(SizeOfTShirt(1) !='S');
