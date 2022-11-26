@@ -14,10 +14,13 @@ char SizeOfTShirt(int cms) {
 }
 
 int main() {
+    //Give -1 in hex as test to check,if it still prints S, as negative size doesn't exist
     assert(SizeOfTShirt(0x80000001) != 'S');
-    assert(SizeOfTShirt(0x8FFFFFFF) != 'L');
+    //Give unreasonably large value and expect error, here 2^31, and keep sign bit as 0
+    assert(SizeOfTShirt(0x7FFFFFFF) != 'L');
+    //Give unreasonably small number and expect error, here 2^31 and 1 for sign bit
     assert(SizeOfTShirt(0xFFFFFFFF) != 'S');
-    assert(SizeOfTShirt(1) !='S');
+    assert(SizeOfTShirt(0x8FFFFFFF) != 'S');
     #if 0
     assert(SizeOfTShirt(37) == 'S');
     assert(SizeOfTShirt(40) == 'M');
