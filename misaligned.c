@@ -26,10 +26,10 @@ int GetMaximumStringCounts();
 //இந்த விக்கியின் படி, தவறாக வடிவமைக்கப்பட்ட ஒரு வரைபடத்தை எண்களிலிருந்து வண்ணங்களுக்கு அச்சிட முயற்சிக்கிறது. 
 //Misaligned versucht, eine Karte von Zahlen zu Farben zu drucken, wie in diesem Wiki beschrieben
 int printColorMap() {
-    //int i = 0, j = 0;
-    for(int i = 0; i < 5; i++) 
+    int i = 0, j = 0;
+    for(i = 0; i < 5; i++) 
     {
-        for(int j = 0; j < 5; j++)
+        for(j = 0; j < 5; j++)
         {
             //இருப்பினும், எண் மதிப்புகள் மற்றும் பிரிப்பான் (|) தவறாக வடிவமைக்கப்பட்டுள்ளன
             //Die numerischen Werte und das Trennzeichen (|) sind jedoch falsch ausgerichtet. Das beudetet "%d |"
