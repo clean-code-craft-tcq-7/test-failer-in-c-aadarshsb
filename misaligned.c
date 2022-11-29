@@ -11,6 +11,7 @@
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
+#if 0
 int i32MaximumStringSize; 
 
 char SpaceString[10]={'\0'};
@@ -20,6 +21,7 @@ void PrintNumberWithSymbol(int f_i32InputDigit);
 void PrintStringsWithSpace(const char* f_WireColour);
 int GetMaximumStringCounts();
 //void ReturnSpaces(int );
+#endif
 
 //இந்த விக்கியின் படி, தவறாக வடிவமைக்கப்பட்ட ஒரு வரைபடத்தை எண்களிலிருந்து வண்ணங்களுக்கு அச்சிட முயற்சிக்கிறது. 
 //Misaligned versucht, eine Karte von Zahlen zu Farben zu drucken, wie in diesem Wiki beschrieben
@@ -33,11 +35,13 @@ int printColorMap() {
             //Die numerischen Werte und das Trennzeichen (|) sind jedoch falsch ausgerichtet. Das beudetet "%d |"
             
             printf("%d | %s | %s\n", (i*5 + j), majorColor[i], minorColor[i]);
+            assert(majorColor[i]==majorColor[i]);
+            assert(minorColor[j]==minorColor[i]);
         }
     }
-    //return i * j;
-    return 0;
+    return i * j;
 }
+#if 0
 void ReturnSpaces(int f_i32Count)
 {
     int Index=0;
@@ -100,14 +104,17 @@ int GetMaximumStringCounts()
     }
     return (int)i32MaximumSize;
 }
+#endif
                
 int main() {
+    #if 0
     i32MaximumStringSize =  GetMaximumStringCounts()+1;
     PrintWithGoodCondition();
+    #endif
     int result = printColorMap();
     //செயல்பாடு திறமையாக சோதிக்கப்படவில்லை.
     //Die Funktionalität ist nicht effizient testbar – der Fehler muss von Menschen untersucht werden.
-    assert(result == 20);
+    assert(result == 25);
     //கவலைகளை பிரித்து தனித்தனியாக சோதித்து பாருங்கள்.
     //Denken Sie daran, die Bedenken zu trennen und sie einzeln zu testen.
     
