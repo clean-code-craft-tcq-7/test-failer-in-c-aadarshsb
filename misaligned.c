@@ -19,7 +19,7 @@ void PrintWithGoodCondition();
 void PrintNumberWithSymbol(int f_i32InputDigit);
 void PrintStringsWithSpace(const char* f_WireColour);
 int GetMaximumStringCounts();
-void ReturnSpaces(int f_i32Count);
+void ReturnSpaces(int);
 
 //இந்த விக்கியின் படி, தவறாக வடிவமைக்கப்பட்ட ஒரு வரைபடத்தை எண்களிலிருந்து வண்ணங்களுக்கு அச்சிட முயற்சிக்கிறது. 
 //Misaligned versucht, eine Karte von Zahlen zu Farben zu drucken, wie in diesem Wiki beschrieben
@@ -68,7 +68,7 @@ void PrintNumberWithSymbol(int f_i32InputDigit)
 
 void PrintStringsWithSpace(const char* f_WireColour)
 {
-   ReturnSpaces(GetMaximumStringCounts - strlen(f_WireColour));
+   ReturnSpaces(GetMaximumStringCounts - (int)strlen(f_WireColour));
    printf("%s%s|",f_WireColour,SpaceString);
 }
                
@@ -84,7 +84,7 @@ void ReturnSpaces(int f_i32Count)
 
 int GetMaximumStringCounts()
 {
-    int i32MaximumSize = 0;
+    long unsigned int i32MaximumSize = 0;
     for (int i=0; i< MAXIMUM_MAJOR_COLOURS; i++)
     {
         if(strlen(majorColor[i]) > i32MaximumSize)
@@ -99,7 +99,7 @@ int GetMaximumStringCounts()
             i32MaximumSize = strlen(majorColor[i]);
         }
     }
-    return i32MaximumSize;
+    return (int)i32MaximumSize;
 }
                
 int main() {
