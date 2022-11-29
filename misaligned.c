@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 
 #define MAXIMUM_MAJOR_COLOURS 5
 #define MAXIMUM_MINOR_COLOURS 5
@@ -16,7 +17,7 @@ char SpaceString[10]={'\0'};
 
 void PrintWithGoodCondition();
 void PrintNumberWithSymbol(int f_i32InputDigit);
-void PrintStringsWithSpace(char* f_WireColour);
+void PrintStringsWithSpace(const char* f_WireColour);
 int GetMaximumStringCounts();
 void ReturnSpaces(int f_i32Count);
 
@@ -47,7 +48,7 @@ void PrintWithGoodCondition()
             PrintNumberWithSymbol((i*5)+j);
             PrintStringsWithSpace(majorColor[i]);
             PrintStringsWithSpace(minorColor[j]);
-            printf('\n');
+            printf(" \n");
         }
     }
 }
@@ -55,26 +56,26 @@ void PrintNumberWithSymbol(int f_i32InputDigit)
 {
     if(f_i32InputDigit >=0 && f_i32InputDigit <= 9)
     {
-        ReturnSpaces(MAX_SIZE_FOR_DIGITS-1)
+        ReturnSpaces(MAX_SIZE_FOR_DIGITS-1);
         printf("%d%s|",f_i32InputDigit,SpaceString);
     }
     else if(f_i32InputDigit >=10 && f_i32InputDigit <= 100)
     {
-        ReturnSpaces(MAX_SIZE_FOR_DIGITS-2)
+        ReturnSpaces(MAX_SIZE_FOR_DIGITS-2);
         printf("%d%s|",f_i32InputDigit,SpaceString);
     }
 }
 
-void PrintStringsWithSpace(char* f_WireColour)
+void PrintStringsWithSpace(const char* f_WireColour)
 {
    ReturnSpaces(GetMaximumStringCounts - strlen(f_WireColour));
-   printf("%s%s|",majorColor[i],SpaceString);
+   printf("%s%s|",f_WireColour,SpaceString);
 }
                
 void ReturnSpaces(int f_i32Count)
 {
-    int Index=0
-    for(; Index<f_i32Count; Index++)
+    int Index=0;
+    for(;Index<f_i32Count; Index++)
     {
         SpaceString[Index]=' ';
     }
