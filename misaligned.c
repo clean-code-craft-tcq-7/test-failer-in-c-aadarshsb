@@ -19,7 +19,7 @@ void PrintWithGoodCondition();
 void PrintNumberWithSymbol(int f_i32InputDigit);
 void PrintStringsWithSpace(const char* f_WireColour);
 int GetMaximumStringCounts();
-//void ReturnSpaces(int );
+void ReturnSpaces(int );
 
 //இந்த விக்கியின் படி, தவறாக வடிவமைக்கப்பட்ட ஒரு வரைபடத்தை எண்களிலிருந்து வண்ணங்களுக்கு அச்சிட முயற்சிக்கிறது. 
 //Misaligned versucht, eine Karte von Zahlen zu Farben zu drucken, wie in diesem Wiki beschrieben
@@ -40,6 +40,7 @@ int printColorMap() {
     return i * j;
 }
 
+//-----------functions to align the number, string and | symbol to look like a proper table------//
 void ReturnSpaces(int f_i32Count)
 {
     int Index=0;
@@ -102,17 +103,18 @@ int GetMaximumStringCounts()
     }
     return (int)i32MaximumSize;
 }
-               
+//-----------functions to align the number, string and | symbol to look like a proper table[ENDS]------//
+
 int main() {
     i32MaximumStringSize =  GetMaximumStringCounts()+1;
     PrintWithGoodCondition();
-    //int result = printColorMap();
+    int result = printColorMap();
     //செயல்பாடு திறமையாக சோதிக்கப்படவில்லை.
     //Die Funktionalität ist nicht effizient testbar – der Fehler muss von Menschen untersucht werden.
-    //assert(result == 25);
+    //Since the number j has to be added with 1, the test should return 30 isntead of 25. i.e., J should start at 1 and ends at 5
+    assert(result == 30);
     //கவலைகளை பிரித்து தனித்தனியாக சோதித்து பாருங்கள்.
     //Denken Sie daran, die Bedenken zu trennen und sie einzeln zu testen.
-    
     printf("All is well (maybe!)\n");
     return 0;
 }
