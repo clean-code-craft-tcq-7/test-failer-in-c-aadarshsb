@@ -56,7 +56,7 @@ void PrintWithGoodCondition()
     {
         for(int j=0; j<5 ;j++)
         {
-            PrintNumberWithSymbol((i*5)+j);
+            PrintNumberWithSymbol((i*5)+(j+1));
             PrintStringsWithSpace(majorColor[i]);
             PrintStringsWithSpace(minorColor[j]);
             printf(" \n");
