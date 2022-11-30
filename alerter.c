@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <assert.h>
-#include "alterter.h"
 
 int alertFailureCount = 0;
 
