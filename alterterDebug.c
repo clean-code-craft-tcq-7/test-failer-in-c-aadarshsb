@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "alerter.h"
+#include "alterter.h"
 
 
 int networkAlertStub(float celcius) {
