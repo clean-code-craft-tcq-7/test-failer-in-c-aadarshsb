@@ -79,7 +79,7 @@ void PrintNumberWithSymbol(int f_i32InputDigit)
 
 void PrintStringsWithSpace(const char* f_WireColour)
 {
-   ReturnSpaces(GetMaximumStringCounts - (int)strlen(&f_WireColour));
+   ReturnSpaces(GetMaximumStringCounts - (int)strlen(*f_WireColour));
    printf("%s%s|",f_WireColour,SpaceString);
 }
 
